@@ -3,9 +3,13 @@ package com.food.ordering.system.domain.valueobject;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Objects;
+import java.util.function.BinaryOperator;
 
 public class Money {
+
     private final BigDecimal amount;
+
+    public static final Money ZERO = new Money(BigDecimal.ZERO);
 
     public Money(BigDecimal amount) {
         this.amount = amount;
