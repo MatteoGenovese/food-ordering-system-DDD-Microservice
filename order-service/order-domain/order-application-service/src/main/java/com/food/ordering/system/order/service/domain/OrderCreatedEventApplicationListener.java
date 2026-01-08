@@ -18,7 +18,7 @@ public class OrderCreatedEventApplicationListener {
 
     @TransactionalEventListener
     void process(OrderCreatedEvent orderCreatedEvent) {
-
+       orderCreatedPaymentRequestMessagePublisher.publish(orderCreatedEvent);
     }
 
 }

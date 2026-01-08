@@ -9,7 +9,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class ApplicationDomainEventPublisher implements ApplicationEventPublisherAware, DomainEventPublisher<OrderCreatedEvent> {
+public class ApplicationDomainEventPublisher implements
+        ApplicationEventPublisherAware,
+        DomainEventPublisher<OrderCreatedEvent> {
 
     private ApplicationEventPublisher applicationEventPublisher;
 
