@@ -24,7 +24,7 @@ public class OrderDataMapper {
 
     public Restaurant createOrderCommandToRestaurant(CreateOrderCommand createOrderCommand) {
         return Restaurant.Builder.builder()
-                .restaurantId(new RestaurantId(createOrderCommand.getRestaurantID()))
+                .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .products(createOrderCommand.getItems().stream().map(orderItem ->
                         new Product(new ProductId(orderItem.getProductId()))).collect(Collectors.toList()
                 )).build();
@@ -32,8 +32,8 @@ public class OrderDataMapper {
 
     public Order createOrderCommandToOrder(CreateOrderCommand createOrderCommand) {
         return Order.Builder.builder()
-                .customerId(new CustomerId(createOrderCommand.getCustomerID()))
-                .restaurantId(new RestaurantId(createOrderCommand.getRestaurantID()))
+                .customerId(new CustomerId(createOrderCommand.getCustomerId()))
+                .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .deliveryAddress(orderAddressToStreetAddresss(createOrderCommand.getAddress()))
                 .price(new Money(createOrderCommand.getPrice()))
                 .items(orderItemsToOrderTimesEntities(createOrderCommand.getItems()))
@@ -60,10 +60,11 @@ public class OrderDataMapper {
         );
     }
 
-    public CreateOrderResponse orderToCreateOrderResponse(Order order) {
+    public CreateOrderResponse orderToCreateOrderResponse(Order order, String message) {
         return CreateOrderResponse.builder()
                 .orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
+                .message(message)
                 .build();
     }
 

@@ -15,9 +15,9 @@ import java.util.UUID;
 public class CreateOrderCommand {
 
     @NotNull
-    private final UUID customerID;
+    private final UUID customerId;
     @NotNull
-    private final UUID restaurantID;
+    private final UUID restaurantId;
     @NotNull
     private final BigDecimal price;
     @NotNull
