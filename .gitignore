@@ -40,4 +40,4 @@ build/
 #
 FuzzierSettings.xml
 
-/volumes/
+*/volumes/
