@@ -6,6 +6,8 @@
         <artifactId>order-service</artifactId>
         <groupId>com.food.ordering.system</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -19,6 +21,14 @@
         <dependency>
             <groupId>com.food.ordering.system</groupId>
             <artifactId>order-application-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
         </dependency>
     </dependencies>
 
