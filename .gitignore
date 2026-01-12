@@ -41,3 +41,8 @@ build/
 FuzzierSettings.xml
 
 /volumes/
+/infrastructure/docker-compose/*
+/infrastructure/kafka/kafka-model/src/main/java/com/food/ordering/system
+/kafka/order/avro/model/*
+
+
